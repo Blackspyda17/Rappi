@@ -31,12 +31,10 @@ class RecipeApiClient {
 
     }
 
-    // *************************for getting all categories and categories data******************************************
     var mRecipes: MutableLiveData<List<Category>>? = null
     private var mRetrieveRecipesRunnable: RetreiveRecipesRunnable? = null
 
 
-    //**************************for getting the restaurants and restaurants detail*************************************
     var mSearch: MutableLiveData<List<Restaurants>>? = null
     private var mRetreiveSearchRunnable: RetreiveSearchRunnable? = null
 

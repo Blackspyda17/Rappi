@@ -14,29 +14,31 @@
                   android:layout_gravity="center"
     >
 
-        <ImageView android:layout_width="45dp"
-                   android:layout_height="45dp"
-                   app:srcCompat="@drawable/ic_rappi"
-                   android:layout_gravity="center_horizontal"
-        />
+        <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/ic_rappi" />
 
-        <TextView android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="RappiFood"
-                  android:textSize="25dp"
-                  android:textColor="@color/black_effective"
-                  android:fontFamily="@font/futur"
-                  android:layout_marginTop="6dp"
-                  android:layout_gravity="center_horizontal"
-        />
-        <TextView android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="Come Disfruta y Repite"
-                  android:layout_marginTop="20dp"
-                  android:layout_gravity="center_horizontal"
-                  android:textColor="@color/green1"
-                  android:fontFamily="@font/futura_medium_bt"
-        />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/futuraheavy"
+                android:text="RappiFood"
+                android:textColor="@color/black_effective"
+                android:textSize="25dp" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/futura"
+                android:text="Come Disfruta y Repite"
+                android:textColor="@color/red3"
+                android:textStyle="bold" />
 
     </LinearLayout>
 

@@ -38,9 +38,9 @@ class SplashActivity : AppCompatActivity() {
                 if (grantResults.size > 0)
                 {
                     if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                        Toast.makeText(this@SplashActivity,"Permission Granted" , Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@SplashActivity,"Permiso a la Ubicación Concedido" , Toast.LENGTH_SHORT).show()
                     else
-                        Toast.makeText(this@SplashActivity,"Permission Denied" , Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@SplashActivity,"Acceso a la Ubicación denegado" , Toast.LENGTH_SHORT).show()
 
                 }
             }
@@ -52,7 +52,8 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
 
         //*****************check location permission********************************
