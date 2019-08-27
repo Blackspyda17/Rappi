@@ -1,8 +1,9 @@
+package com.example.rappi.repository
 
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MediatorLiveData
-import androidx.lifecycle.Observer
+import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.MediatorLiveData
+import android.arch.lifecycle.Observer
 import com.example.rappi.models.Category
 import com.example.rappi.requests.RecipeApiClient
 
@@ -10,12 +11,10 @@ import com.example.rappi.requests.RecipeApiClient
 class RecipeRepository {
 
     companion object {
-        private var instance:RecipeRepository?  = null
+        private var instance: RecipeRepository? = null
 
-        fun getInstance():RecipeRepository
-        {
-            if (instance==null)
-            {
+        fun getInstance(): RecipeRepository {
+            if (instance == null) {
                 instance = RecipeRepository()
             }
             return this.instance!!
@@ -39,12 +38,9 @@ class RecipeRepository {
             mRecipes.addSource(it, object : Observer<List<Category>> {
                 override fun onChanged(t: List<Category>?) {
 
-                    if (t!=null)
-                    {
+                    if (t != null) {
                         mRecipes.value = t
-                    }
-                    else
-                    {
+                    } else {
 
                     }
                 }
@@ -58,11 +54,9 @@ class RecipeRepository {
         return mRecipeApiClient.getRecipe()
     }
 
-    fun searchRecipesApi()
-    {
+    fun searchRecipesApi() {
         mRecipeApiClient.searchRecipesApi()
     }
-
 
 
 }

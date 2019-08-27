@@ -2,6 +2,7 @@
 
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,13 +16,13 @@
 
         <ImageView android:layout_width="45dp"
                    android:layout_height="45dp"
-                   android:src="@drawable/ic_lunchbox"
+                   app:srcCompat="@drawable/ic_rappi"
                    android:layout_gravity="center_horizontal"
         />
 
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="LunchBox"
+                  android:text="RappiFood"
                   android:textSize="25dp"
                   android:textColor="@color/black_effective"
                   android:fontFamily="@font/futur"
@@ -30,7 +31,7 @@
         />
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="Eat Sleep Repeat"
+                  android:text="Come Disfruta y Repite"
                   android:layout_marginTop="20dp"
                   android:layout_gravity="center_horizontal"
                   android:textColor="@color/green1"

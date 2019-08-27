@@ -1,11 +1,11 @@
 package com.example.rappi.view.adapter
 
+import android.databinding.DataBindingUtil
+import android.databinding.ViewDataBinding
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
-import androidx.databinding.library.baseAdapters.BR
-import androidx.recyclerview.widget.RecyclerView
+import com.example.rappi.BR
 import com.example.rappi.R
 import com.example.rappi.models.Restaurants
 
@@ -51,7 +51,8 @@ class RecyclerAdapter(val resList:List<Restaurants>): RecyclerView.Adapter<Recyc
 
         }else
         {
-            RecyclerViewHolder(DataBindingUtil.inflate(LayoutInflater.from(p0.context),
+            RecyclerViewHolder(
+                DataBindingUtil.inflate(LayoutInflater.from(p0.context),
                 R.layout.categories_recycler_view,p0,false), TYPE_HEAD)
         }
 

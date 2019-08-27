@@ -1,8 +1,8 @@
 package com.example.rappi.requests
 
+import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.MutableLiveData
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.example.rappi.AppExecutors
 import com.example.rappi.models.Category
 import com.example.rappi.models.Restaurants

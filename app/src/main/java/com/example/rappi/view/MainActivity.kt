@@ -1,16 +1,16 @@
 package com.example.rappi.view
-import RecipeViewModel
-import RestaurantsViewModel
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import com.example.rappi.R
 import com.example.rappi.models.Restaurants
 import com.example.rappi.view.adapter.RecyclerAdapter1
+import com.example.rappi.viewModels.RecipeViewModel
+import com.example.rappi.viewModels.RestaurantsViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

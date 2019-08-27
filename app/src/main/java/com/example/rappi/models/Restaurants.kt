@@ -1,6 +1,6 @@
 package com.example.rappi.models;
 
-import androidx.databinding.BaseObservable
+import android.databinding.BaseObservable
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 

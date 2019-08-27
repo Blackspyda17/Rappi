@@ -1,15 +1,12 @@
 package com.example.rappi.view.adapter
-
 import android.content.Context
 import android.content.Intent
+import android.databinding.DataBindingUtil
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout.HORIZONTAL
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.library.baseAdapters.BR
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.rappi.BR
 import com.example.rappi.R
 import com.example.rappi.databinding.CategoriesRecyclerViewBinding
 import com.example.rappi.databinding.RecyclerSingleBinding
@@ -18,14 +15,16 @@ import com.example.rappi.view.DetailActivity
 
 class RecyclerAdapter1(
     val resList: List<Restaurants>,
-    val imageList: Array<Int>, val context: Context
-) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    val imageList: Array<Int>,val context: Context
+): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    companion object {
+    companion object
+    {
         private const val TYPE_HEADER = 0
         private const val TYPE_DETAIL = 2
         private const val TYPE_SEARCH = 1
     }
+
 
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): RecyclerView.ViewHolder {
@@ -34,40 +33,21 @@ class RecyclerAdapter1(
 
         return when (p1) {
             TYPE_HEADER -> {
-                HeaderViewHolder(
-                    DataBindingUtil.inflate(
-                        layoutInflater,
-                        R.layout.categories_recycler_view,
-                        p0,
-                        false
-                    )
-                )
+                HeaderViewHolder(DataBindingUtil.inflate(layoutInflater, R.layout.categories_recycler_view, p0, false))
             }
 
             TYPE_DETAIL -> {
-                DetailViewHolder(
-                    DataBindingUtil.inflate(
-                        layoutInflater,
-                        R.layout.recycler_single,
-                        p0,
-                        false
-                    )
-                )
+                DetailViewHolder(DataBindingUtil.inflate(layoutInflater, R.layout.recycler_single, p0, false))
 
             }
             TYPE_SEARCH -> {
-                SearchViewHolder(
-                    LayoutInflater.from(p0.context).inflate(
-                        R.layout.searchbar,
-                        p0,
-                        false
-                    )
-                )
+                SearchViewHolder(LayoutInflater.from(p0.context).inflate(R.layout.searchbar,p0,false))
             }
             else -> throw IllegalArgumentException()
 
         }
     }
+
 
 
     override fun getItemCount(): Int {
@@ -88,7 +68,7 @@ class RecyclerAdapter1(
             }
             is DetailViewHolder -> {
                 p0.bind(element)
-                p0.navigate(p0.adapterPosition, resList.get(p1).restaurant!!.url)
+                p0.navigate(p0.adapterPosition,resList.get(p1).restaurant!!.url)
 
             }
 
@@ -100,41 +80,44 @@ class RecyclerAdapter1(
 
         return if (position == 0) {
             TYPE_HEADER
-        } else if (position == 1) {
+        } else if(position==1){
             TYPE_SEARCH
-        } else {
+        }
+        else
+        {
             TYPE_DETAIL
         }
     }
 
 
-    inner class HeaderViewHolder(private val binding: CategoriesRecyclerViewBinding) :
-        RecyclerView.ViewHolder(binding.categoryRecyclerView) {
+
+    inner class HeaderViewHolder(private val binding: CategoriesRecyclerViewBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(imageList: Array<Int>) = with(binding) {
             binding.categoryRecyclerView.adapter = categoriesAdapter(imageList)
-            binding.categoryRecyclerView.layoutManager = LinearLayoutManager(
+            binding.categoryRecyclerView.layoutManager = android.support.v7.widget.LinearLayoutManager(
                 binding.categoryRecyclerView.context,
-                RecyclerView.HORIZONTAL, false
+                android.widget.LinearLayout.HORIZONTAL,
+                false
             )
+            binding.executePendingBindings()
 
 
         }
     }
 
-    inner class DetailViewHolder(private val binding: RecyclerSingleBinding) :
-        RecyclerView.ViewHolder() {
+    inner class DetailViewHolder(private val binding: RecyclerSingleBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(response: Restaurants) = with(binding) {
-
-            binding.setVariable(BR.restaurants, response)
+            binding.setVariable(BR.restaurants,response)
             binding.executePendingBindings()
 
         }
 
-        fun navigate(adapterPosition: Int, url: String) {
+        fun navigate(adapterPosition: Int, url: String)
+        {
             binding.nameTextView.setOnClickListener {
 
                 val intent = Intent(context, DetailActivity::class.java)
-                intent.putExtra("url", url)
+                intent.putExtra("url",url)
                 context.startActivity(intent)
 
             }
@@ -144,4 +127,6 @@ class RecyclerAdapter1(
     inner class SearchViewHolder(inflate: View?) : RecyclerView.ViewHolder(inflate!!) {
     }
 }
+
+
 

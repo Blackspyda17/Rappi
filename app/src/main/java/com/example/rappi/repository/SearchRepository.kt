@@ -1,9 +1,8 @@
 package com.exmple.rappi.repository
 
-
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MediatorLiveData
-import androidx.lifecycle.Observer
+import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.MediatorLiveData
+import android.arch.lifecycle.Observer
 import com.example.rappi.models.Restaurants
 import com.example.rappi.requests.RecipeApiClient
 

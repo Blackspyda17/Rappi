@@ -1,7 +1,9 @@
+package com.example.rappi.viewModels
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
+import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.ViewModel
 import com.example.rappi.models.Category
+import com.example.rappi.repository.RecipeRepository
 
 
 class RecipeViewModel: ViewModel() {

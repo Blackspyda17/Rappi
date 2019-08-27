@@ -1,7 +1,7 @@
 
-
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
+package com.example.rappi.viewModels
+import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.ViewModel
 import com.example.rappi.models.Restaurants
 import com.exmple.rappi.repository.SearchRepository
 
